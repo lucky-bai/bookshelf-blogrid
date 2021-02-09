@@ -15,6 +15,7 @@
 get_header(); ?>
 
 <div id="primary" class="featured-content content-area fullwidth-area-blog">
+	<h1 class="text-center">All Book Reviews</h1>
 	<main id="main" class="site-main all-blog-articles">
 		<?php
 		if ( have_posts() ) :
