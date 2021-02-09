@@ -219,6 +219,22 @@ if ( ! function_exists( 'blogrid_posted_on' ) ) :
 
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . '</span>'; // WPCS: XSS OK.
 
+		echo '<br>';
+		echo '<span> Topics: ';
+		$categories = get_the_category();
+		$output = '';
+		if ( ! empty( $categories ) ) {
+			foreach( $categories as $category ) {
+				$separator = ', ';
+				if ( $category == end($categories) )
+					$separator = '';
+				
+				$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . $separator . '</a>';
+			}
+			echo trim( $output, $separator );
+		}
+		echo '</span>';
+
 	}
 endif;
 
