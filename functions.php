@@ -598,3 +598,10 @@ function blogrid_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+// Hide notification to update this theme
+function remove_core_updates(){
+  global $wp_version;
+  return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_themes','remove_core_updates');
