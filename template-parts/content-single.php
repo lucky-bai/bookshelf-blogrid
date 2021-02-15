@@ -8,11 +8,6 @@
  */
 
 ?>
-		<?php if ( has_post_thumbnail() ) : ?>
-		<div class="featured-thumbnail">
-			<?php the_post_thumbnail('blogrid-slider'); ?>
-		</div>
-	<?php endif; ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('posts-entry fbox'); ?>>
 	<header class="entry-header">
 		<?php

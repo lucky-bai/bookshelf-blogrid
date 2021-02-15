@@ -48,6 +48,7 @@ function blogrid_setup() {
 		add_image_size( 'blogrid-grid', 350 , 230, true );
 		add_image_size( 'blogrid-slider', 850 );
 		add_image_size( 'blogrid-small', 300 , 180, true );
+    add_image_size( 'yarpp-thumbnail', 167, 250, true );
 
 
 		// This theme uses wp_nav_menu() in one location.

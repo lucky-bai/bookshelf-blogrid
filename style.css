@@ -1406,7 +1406,7 @@ object {
 }
 
 .featured-thumbnail img {
-	width:100%;
+	padding-top:10px;
 	max-width:100%;
 	height:auto;
 }
