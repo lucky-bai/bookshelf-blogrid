@@ -12,10 +12,9 @@
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) {
-			// Only prepend "Book Review" on posts that end with ')' character.
-			// This works since all my titles are of format "Book Name (7.5/10)"
+			// Only prepend "Book Review" on posts that contain the word "by"
 			$post_title = get_the_title( get_option('page_for_posts', true) );
-			if ( substr($post_title, -1) == ')' ) {
+			if ( strpos($post_title, " by ") !== false ) {
 				the_title( '<h1 class="entry-title">Book Review: ', '</h1>' );
 			}
 			else {
